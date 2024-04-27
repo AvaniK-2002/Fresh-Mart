@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="check.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Checkout</h1>
+    <!-- Your checkout form -->
+    <form id="checkoutForm" method="post" action="process_order.php">
+        <label for="productNames">Product Names:</label>
+        <input type="text" id="productNames" name="product_names" required><br><br>
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="text" id="totalAmount" name="total_amount" required><br><br>
+
+        <!-- Other necessary fields -->
+
+        <button type="submit" id="placeOrderBtn">Place Order</button>
+    </form>
+</div>
+
+<script src="check.js"></script>
+</body>
+</html>

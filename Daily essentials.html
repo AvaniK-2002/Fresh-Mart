@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Online Grocery|Daily Essentials</title>
+       
+        <link rel="stylesheet" href="styles1.css" />
+        <script src="store.js" async></script>
+        <style>
+        
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .search-container button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+        </style>
+
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="grocery.html">Back to HOME</a></li>
+                  
+                </ul>
+            </nav>
+            <h1 class="title">Daily Essentials</h1>
+        </header>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for daily essentials...">
+            <button onclick="searchItems()">Search</button>
+        </div>
+        <section class="container content-section">
+            
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Aata</span>
+                    <img class="shop-item-image" src="images/Daily ess/d1.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.250</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Sugar1(1kg)</span>
+                    <img class="shop-item-image" src="images/Daily ess/sugar.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs. 50</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Coffee(500g)</span>
+                    <img class="shop-item-image" src="images/Daily ess/coffee.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.150</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Refined oil(5l)</span>
+                    <img class="shop-item-image" src="images/Daily ess/d4.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.500</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Rice(1kg)</span>
+                        <img class="shop-item-image" src="images/Daily ess/rice.jpg">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">Rs.200</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                        <div class="shop-item">
+                            <span class="shop-item-title">jaggery(1kg)</span>
+                            <img class="shop-item-image" src="images/Daily ess/jagger.jpeg">
+                            <div class="shop-item-details">
+                                <span class="shop-item-price">Rs.100</span>
+                                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                            </div>
+                </div>
+            </div>
+        </section>
+     
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">Rs.0</span>
+            </div>
+              <div class ="butn">
+               <form action="payment.html" class="inline">
+               <button class="butn" >BUY NOW</button>
+             </div>
+         </form>
+        </section>
+
+        <script>
+            function searchItems() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var shopItems = document.querySelectorAll('.shop-item');
+    
+                shopItems.forEach(function(item) {
+                    var title = item.querySelector('.shop-item-title').innerText.toLowerCase();
+                    var displayStyle = 'none';
+    
+                    if (title.includes(input)) {
+                        displayStyle = 'block';
+                    }
+    
+                    item.style.display = displayStyle;
+                });
+            }
+        </script>
+        
+    </body>
+</html>

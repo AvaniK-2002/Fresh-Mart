@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment | FRESH MART</title>
+  <link rel="stylesheet" href="logincss.css">
+</head>
+<body>
+  <nav class="main-nav nav">
+        <a href="grocery.html">Back to HOME</a>
+</nav>
+  <div class="log">
+    <div class="page-title">FRESH MART</div>
+  </div>
+
+  <div class="container">
+    <h2 style="color: red;">Select the payment option</h2>
+    <div class="options">
+      <input type="radio" id="cod" name="payment" value="COD">
+      <label for="cod">COD</label><br><br>
+
+      <input type="radio" id="online" name="payment" value="ONLINE PAYMENT">
+      <label for="online">ONLINE PAYMENT</label><br><br>
+    </div>
+
+    <button class="btn" onclick="checkButton()">Submit</button>
+    <div id="error"></div>
+</body>
+</html>
+
+
+<script>
+// script.js
+
+function checkButton() {
+  if (document.getElementById('cod').checked || document.getElementById('online').checked) {
+    document.location.href = "address.php";
+  } else {
+    document.getElementById("error").innerHTML = "Please select a payment option";
+  }
+}
+</script> 
+</html>
+
+ 

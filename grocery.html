@@ -1,0 +1,103 @@
+<html>
+<head>
+<link href="css.css" rel="stylesheet" type="text/css">
+<script>
+function stickyMenu() {
+      var sticky = document.getElementById('sticky');
+      if (window.pageYOffset > 220) {
+        sticky.classList.add('sticky');
+      } else {
+        sticky.classList.remove('sticky');
+      }
+    }
+
+    window.onscroll = function () {
+      stickyMenu();
+    }
+
+    function searchProducts() {
+      var input = document.getElementById('searchInput').value.toLowerCase();
+      var categories = document.getElementsByClassName('categories');
+
+      for (var i = 0; i < categories.length; i++) {
+        var title = categories[i].getElementsByClassName('image-title')[0];
+        var productTitle = title.textContent.toLowerCase();
+
+        if (productTitle.includes(input)) {
+          categories[i].style.display = "inline-block";
+        } else {
+          categories[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+  
+</head>
+<body>       
+     <div class= "scrolling">
+      
+      </div>
+
+   <div class= "parallax">
+     <div class ="page-title">FRESH MART</div>
+         <style>
+           h2{text-align: left;}
+            </style>
+    
+    </div>
+    <div class ="menu" id ="sticky">
+       <ul class ="menu-ul">
+           <a href= "#MENU" class ="a-menu" ><li>HOME</li></a>
+         
+             <a href= "Daily Essentials.html" class ="a-menu" ><li>DAILY ESSENTIALS</li></a>
+              <a href= "Vegetables.html" class ="a-menu" ><li>VEGETABLES</li></a>
+              <a href= "fruits.html" class ="a-menu" ><li>FRUITS</li></a>
+                <a href= "DAIRY PRODUCTS.html" class ="a-menu" ><li>DAIRY PRODUCTS</li></a>
+             
+             <a href= "home.php" class ="a-menu" ><li>PROFILE</li></a>
+              </ul>
+              <div class="search-box">
+               <input type="text" placeholder="Search here" id="searchInput" class="search-input" onkeyup="searchProducts()">
+               <button style="padding: 8px 16px;
+               font-size: 16px;
+               background-color: #4CAF50;
+               color: white;
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;"  type="button" onclick="searchProducts()">Search</button>
+             </div>
+           </div>
+  <div class ="container">
+        <a href "#DAILY ESSENTIALS">
+              <div class ="categories">
+                 <a href="Daily essentials.html"><img src="images/essential.webp" class ="item-image </a>
+				 img src= " images/ class ="item-image"/>
+                <div class= "image-title">DAILY ESSENTIALS</div>
+             </div>
+          </a>
+        <a href "#VEGETABLES">
+              <div class ="categories">
+                   <a href="vegetables.html"><img src="images/vegetable.webp" class ="item-image </a>
+                    img src= " images/ class ="item-image"/>
+                  <div class= "image-title">VEGETABLES</div>
+             </div>
+          </a>
+          <a href "#FRUITS">
+            <div class ="categories">
+                 <a href="fruits.html"><img src="images/fruit1.jpg" class ="item-image </a>
+                  img src= " images/ class ="item-image"/>
+                <div class= "image-title">FRUITS</div>
+           </div>
+        </a>
+         <a href "#DAIRY PRODUCTS">
+              <div class ="categories">
+			   <a href="DAIRY PRODUCTS.html"><img src="images/product.jpg" class ="item-image </a>
+                  <img src= "images/ class ="item-image"/>
+                <div class= "image-title">DAIRY PRODUCTS</div>
+             </div>
+          </a>
+         
+
+   </div>
+ </body>
+</html>
